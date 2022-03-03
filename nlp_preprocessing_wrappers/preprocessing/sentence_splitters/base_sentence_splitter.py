@@ -6,7 +6,7 @@ class BaseSentenceSplitter:
     A `BaseSentenceSplitter` splits strings into sentences.
     """
 
-    def split_sentences(self, text: str) -> List[str]:
+    def split_sentences(self, text: str, max_len: int = 0) -> List[str]:
         """
         Splits a `text` :class:`str` paragraph into a list of :class:`str`, where each is a sentence.
         """

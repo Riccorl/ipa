@@ -56,7 +56,6 @@ class SpacySentenceSplitter(BaseSentenceSplitter):
                 - ``statistical``:
                 - ``rule_based``: It's fast and has a small memory footprint, since it uses punctuation to detect
                     sentence boundaries.
-
     """
 
     def __init__(self, language: str = "en", model_type: str = "statistical") -> None:
@@ -82,7 +81,7 @@ class SpacySentenceSplitter(BaseSentenceSplitter):
                 self.spacy.add_pipe("sentencizer")
         else:
             raise ValueError(
-                f"type {model_type} not supported. Choose between `dependency`, `statistical` and `rule_based`"
+                f"type {model_type} not supported. Choose between `dependency`, `statistical` or `rule_based`"
             )
 
     def __call__(
@@ -100,9 +99,9 @@ class SpacySentenceSplitter(BaseSentenceSplitter):
             max_len (:obj:`int`, optional, defaults to :obj:`0`):
                 Maximum length of a single text. If the text is longer than `max_len`, it will be split
                 into multiple sentences.
-        Returns:
-            :obj:`List[List[str]]`: The input doc splitted into sentences.
 
+        Returns:
+            :obj:`List[List[str]]`: The input doc split into sentences.
         """
         # check if input is batched or a single sample
         # is_batched = self.check_is_batched(texts, is_split_into_words)
@@ -133,7 +132,7 @@ class SpacySentenceSplitter(BaseSentenceSplitter):
     @overrides
     def split_sentences(self, text: str, max_len: int = 0) -> List[str]:
         """
-        Splits a `text` into smaller senences.
+        Splits a `text` into smaller sentences.
 
         Args:
             text (:obj:`str`):
@@ -143,7 +142,7 @@ class SpacySentenceSplitter(BaseSentenceSplitter):
                 into multiple sentences.
 
         Returns:
-            :obj:`List[str]`: The input text splitted into sentences.
+            :obj:`List[str]`: The input text split into sentences.
         """
         sentences = [sent.text.strip() for sent in self.spacy(text).sents]
         if max_len > 0:
