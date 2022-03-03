@@ -49,7 +49,7 @@ class SpacySentenceSplitter(BaseSentenceSplitter):
     Args:
         language (:obj:`str`, optional, defaults to :obj:`en`):
             Language of the text to tokenize.
-        type (:obj:`str`, optional, defaults to :obj:`statistical`):
+        model_type (:obj:`str`, optional, defaults to :obj:`statistical`):
             Three different type of sentence splitter:
                 - ``dependency``: sentence splitter uses a dependency parse to detect sentence boundaries,
                     slow, but accurate.
@@ -59,30 +59,30 @@ class SpacySentenceSplitter(BaseSentenceSplitter):
 
     """
 
-    def __init__(self, language: str = "en", type: str = "statistical") -> None:
+    def __init__(self, language: str = "en", model_type: str = "statistical") -> None:
         # we need spacy's dependency parser if we're not using rule-based sentence boundary detection.
         # self.spacy = get_spacy_model(language, parse=not rule_based, ner=False)
-        dep = bool(type == "dependency")
+        dep = bool(model_type == "dependency")
         if language in SPACY_LANGUAGE_MAPPER:
             self.spacy = load_spacy(SPACY_LANGUAGE_MAPPER[language], parse=dep)
         else:
             self.spacy = spacy.blank(language)
             # force type to rule_based since there is no pre-trained model
-            type = "rule_based"
-        if type == "dependency":
+            model_type = "rule_based"
+        if model_type == "dependency":
             # dependency type must declared at model init
             pass
-        elif type == "statistical":
+        elif model_type == "statistical":
             if not self.spacy.has_pipe("senter"):
                 self.spacy.enable_pipe("senter")
-        elif type == "rule_based":
+        elif model_type == "rule_based":
             # we use `sentencizer`, a built-in spacy module for rule-based sentence boundary detection.
             # depending on the spacy version, it could be called 'sentencizer' or 'sbd'
             if not self.spacy.has_pipe("sentencizer"):
                 self.spacy.add_pipe("sentencizer")
         else:
             raise ValueError(
-                f"type {type} not supported. Choose between `dependency`, `statistical` and `rule_based`"
+                f"type {model_type} not supported. Choose between `dependency`, `statistical` and `rule_based`"
             )
 
     def __call__(
