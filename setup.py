@@ -11,7 +11,7 @@ install_requires = ["spacy>=3.2,<3.3", "stanza>=1.2,<1.4", "overrides>=6.0.0,<7.
 
 setuptools.setup(
     name="nlp_toolkit",  # Replace with your own username
-    version="0.1.0",
+    version="0.1.1",
     author="Riccardo Orlando",
     author_email="orlandoricc@gmail.com",
     description="Toolkit for NLP Engineers",
