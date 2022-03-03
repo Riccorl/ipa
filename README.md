@@ -12,7 +12,7 @@
 [![Upload to PyPi](https://github.com/Riccorl/nlp-toolkit/actions/workflows/python-publish-conda.yml/badge.svg)](https://github.com/Riccorl/nlp-toolkit/actions/workflows/python-publish-conda.yml)
 [![PyPi Version](https://img.shields.io/github/v/release/Riccorl/nlp-toolkit)](https://github.com/Riccorl/nlp-toolkit/releases)
 [![Anaconda-Server Badge](https://anaconda.org/Riccorl/nlp-toolkit/badges/version.svg)](https://anaconda.org/Riccorl/nlp-toolkit)
-[![DeepSource](https://deepsource.io/gh/Riccorl/nlp-toolkit.svg/?label=active+issues)](https://deepsource.io/gh/Riccorl/nlp-toolkit/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/Riccorl/nlp-toolkit.svg/?label=active+issues&token=QC6Jty-YdgXjKh9mKZyeqa4I)](https://deepsource.io/gh/Riccorl/nlp-toolkit/?ref=repository-badge)
 
 </div>
 
