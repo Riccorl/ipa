@@ -1,6 +1,6 @@
 <div align="center">
 
-# NLP Toolkit
+# NLP Preprocessing Wrappers
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://github.dev/Riccorl/nlp-preprocessing-wrappers)
 [![PyTorch](https://img.shields.io/badge/PyTorch-orange?logo=pytorch)](https://pytorch.org/)

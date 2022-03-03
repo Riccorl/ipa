@@ -24,7 +24,7 @@ jobs:
           auto-update-conda: true
           auto-activate-base: false
           python-version: 3.9
-          activate-environment: "build-nlp-toolkit"
+          activate-environment: "build-nlp-preprocessing-wrappers"
           channels: riccorl
 
       - name: Setup conda env
