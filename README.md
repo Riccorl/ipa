@@ -5,6 +5,8 @@
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://github.dev/Riccorl/nlp-toolkit)
 [![PyTorch](https://img.shields.io/badge/PyTorch-orange?logo=pytorch)](https://pytorch.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000)](https://github.com/psf/black)
+[![Stanza](https://img.shields.io/badge/1.3-Stanza-5f0a09?logo=stanza)](https://stanfordnlp.github.io/stanza/)
+[![SpaCy](https://img.shields.io/badge/3.2.3-SpaCy-1a6f93?logo=soacy)](https://spacy.io/)
 
 [![Upload to PyPi](https://github.com/Riccorl/nlp-toolkit/actions/workflows/python-publish-pypi.yml/badge.svg)](https://github.com/Riccorl/nlp-toolkit/actions/workflows/python-publish-pypi.yml)
 [![Upload to PyPi](https://github.com/Riccorl/nlp-toolkit/actions/workflows/python-publish-conda.yml/badge.svg)](https://github.com/Riccorl/nlp-toolkit/actions/workflows/python-publish-conda.yml)

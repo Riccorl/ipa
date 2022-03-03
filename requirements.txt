@@ -1,4 +1,4 @@
 torch>=1.7,<1.11
 stanza>=1.2,<1.4
 spacy>=3.2,<3.3
-overrides~=6.0.0
+overrides>=6.0.0,<7.0.0

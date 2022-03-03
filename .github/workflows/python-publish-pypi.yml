@@ -21,7 +21,7 @@ jobs:
           pip install build
 
       - name: Extract version
-        run: echo "TRANSFORMERS_EMBEDDER_VERSION=`python setup.py --version`" >> $GITHUB_ENV
+        run: echo "NLP_TOOLKIT_VERSION=`python setup.py --version`" >> $GITHUB_ENV
 
       - name: Build package
         run: python -m build

@@ -5,9 +5,9 @@ with open("README.md", "r") as fh:
 
 extras = {}
 extras["torch"] = ["torch>=1.5,<1.11"]
-extras["all"] = extras["torch"] + extras["spacy"]
+extras["all"] = extras["torch"]
 
-install_requires = ["transformers>=4.3,<4.17"]
+install_requires = ["spacy>=3.2,<3.3", "stanza>=1.2,<1.4", "overrides>=6.0.0,<7.0.0"]
 
 setuptools.setup(
     name="nlp_toolkit",  # Replace with your own username
