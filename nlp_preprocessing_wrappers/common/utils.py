@@ -36,9 +36,6 @@ def is_spacy_available():
     return _spacy_available
 
 
-if is_torch_available():
-    pass
-
 # Spacy and Stanza stuff
 
 LOADED_SPACY_MODELS: Dict[Tuple[str, bool, bool, bool, bool], spacy.Language] = {}
