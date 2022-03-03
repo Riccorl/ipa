@@ -2,9 +2,9 @@ from typing import List, Union
 
 from overrides import overrides
 
-from nlp_toolkit.data.word import Word
+from nlp_preprocessing_wrappers.data.word import Word
 
-from nlp_toolkit.preprocessing.tokenizers.base_tokenizer import BaseTokenizer
+from nlp_preprocessing_wrappers.preprocessing.tokenizers.base_tokenizer import BaseTokenizer
 
 
 class WhitespaceTokenizer(BaseTokenizer):
@@ -33,7 +33,7 @@ class WhitespaceTokenizer(BaseTokenizer):
 
         Example::
 
-            >>> from nlp_toolkit.preprocessing import WhitespaceTokenizer
+            >>> from nlp_preprocessing_wrappers.preprocessing import WhitespaceTokenizer
 
             >>> whitespace_tokenizer = WhitespaceTokenizer()
             >>> whitespace_tokenizer("Mary sold the car to John .")

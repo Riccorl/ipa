@@ -121,9 +121,7 @@ class Argument:
         The end index of the argument span in the sentence.
     """
 
-    def __init__(
-        self, role: str, predicate: Predicate, words: List[Word], start_index: int, end_index: int
-    ):
+    def __init__(self, role: str, predicate: Predicate, words: List[Word], start_index: int, end_index: int):
         """
 
         Args:

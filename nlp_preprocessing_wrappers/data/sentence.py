@@ -1,6 +1,6 @@
 from typing import List, Any
 
-from nlp_toolkit.data.word import Word, Predicate
+from nlp_preprocessing_wrappers.data.word import Word, Predicate
 
 
 class Sentence(List):

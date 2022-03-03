@@ -5,11 +5,11 @@ import spacy
 from overrides import overrides
 from spacy.tokens import Doc
 
-from nlp_toolkit.common.logging import get_logger
-from nlp_toolkit.data.word import Word
-from nlp_toolkit.common.utils import load_spacy
-from nlp_toolkit.preprocessing.tokenizers import SPACY_LANGUAGE_MAPPER
-from nlp_toolkit.preprocessing.tokenizers.base_tokenizer import BaseTokenizer
+from nlp_preprocessing_wrappers.common.logging import get_logger
+from nlp_preprocessing_wrappers.data.word import Word
+from nlp_preprocessing_wrappers.common.utils import load_spacy
+from nlp_preprocessing_wrappers.preprocessing.tokenizers import SPACY_LANGUAGE_MAPPER
+from nlp_preprocessing_wrappers.preprocessing.tokenizers.base_tokenizer import BaseTokenizer
 
 logger = get_logger(level=logging.DEBUG)
 
@@ -83,7 +83,7 @@ class SpacyTokenizer(BaseTokenizer):
 
         Example::
 
-            >>> from nlp_toolkit.preprocessing import SpacyTokenizer
+            >>> from nlp_preprocessing_wrappers.preprocessing import SpacyTokenizer
 
             >>> spacy_tokenizer = SpacyTokenizer(language="en", pos_tags=True, lemma=True)
             >>> spacy_tokenizer("Mary sold the car to John.")
@@ -112,10 +112,7 @@ class SpacyTokenizer(BaseTokenizer):
             if isinstance(texts[0], str):
                 texts = [text.split(" ") for text in texts]
             spaces = [[True] * len(text) for text in texts]
-            texts = [
-                Doc(self.spacy.vocab, words=text, spaces=space)
-                for text, space in zip(texts, spaces)
-            ]
+            texts = [Doc(self.spacy.vocab, words=text, spaces=space) for text, space in zip(texts, spaces)]
         return [self._clean_tokens(tokens) for tokens in self.spacy.pipe(texts)]
 
     @staticmethod

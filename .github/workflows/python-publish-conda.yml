@@ -31,13 +31,13 @@ jobs:
         run: |
           conda install -c defaults anaconda-client conda-build
       - name: Extract version
-        run: echo "NLP_TOOLKIT_VERSION=`python setup.py --version`" >> $GITHUB_ENV
+        run: echo "PREPROCESSING_WRAPPERS_VERSION=`python setup.py --version`" >> $GITHUB_ENV
 
       - name: Build conda packages
         run: |
           conda info
           conda list
-          conda-build -c riccorl -c conda-forge -c huggingface .github/conda
+          conda-build -c riccorl -c conda-forge -c stanfordnlp .github/conda
 
       - name: Upload to Anaconda
         run: anaconda upload `conda-build .github/conda --output` --force
