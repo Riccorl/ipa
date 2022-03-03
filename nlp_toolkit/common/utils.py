@@ -1,25 +1,13 @@
-import logging
 import importlib.util
 import json
 import logging
-import os
-import shutil
-import tarfile
-import tempfile
-from functools import partial
-from hashlib import sha256
 from pathlib import Path
-from typing import Union, Any, Dict, Tuple, BinaryIO, Optional
-from urllib.parse import urlparse
-from zipfile import is_zipfile, ZipFile
+from typing import Union, Any, Dict, Tuple, Optional
 
-import requests
 import spacy
 import stanza
 import yaml
-from filelock import FileLock
 from spacy.cli.download import download as spacy_download
-from tqdm import tqdm
 
 from common.logging import get_logger
 
@@ -52,8 +40,7 @@ def is_spacy_available():
 
 
 if is_torch_available():
-    import torch
-    from torch import Tensor
+    pass
 
 # Spacy and Stanza stuff
 
@@ -169,61 +156,3 @@ def load_stanza(
         LOADED_STANZA_MODELS[stanza_params] = stanza_tagger
 
     return LOADED_STANZA_MODELS[stanza_params]
-
-
-# file I/O stuff
-
-
-def load_yaml(path: Union[str, Path]):
-    """
-    Load a yaml file provided in input.
-    Args:
-        path: path to the yaml file.
-
-    Returns:
-        The yaml file parsed.
-    """
-    with open(path, encoding="utf8") as f:
-        return yaml.load(f, Loader=yaml.FullLoader)
-
-
-def dump_yaml(document: Any, path: Union[str, Path]):
-    """
-    Dump input to yaml file.
-    Args:
-        document: thing to dump
-        path: path to the yaml file.
-
-    Returns:
-
-    """
-    with open(path, "w", encoding="utf8") as outfile:
-        yaml.dump(document, outfile, default_flow_style=False)
-
-
-def load_json(path: Union[str, Path]):
-    """
-    Load a yaml file provided in input.
-    Args:
-        path: path to the json file.
-
-    Returns:
-        The yaml file parsed.
-    """
-    with open(path, encoding="utf8") as f:
-        return json.load(f)
-
-
-def dump_json(document: Any, path: Union[str, Path], indent: Optional[int] = None):
-    """
-    Dump input to json file.
-    Args:
-        document: thing to dump
-        path: path to the yaml file.
-        indent: json indent
-
-    Returns:
-
-    """
-    with open(path, "w", encoding="utf8") as outfile:
-        json.dump(document, outfile, indent=indent)
