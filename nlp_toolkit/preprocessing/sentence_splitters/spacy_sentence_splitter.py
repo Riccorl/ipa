@@ -3,8 +3,8 @@ from typing import Any, Iterable, List, Union
 import spacy
 from overrides import overrides
 
-from common.utils import load_spacy
-from preprocessing.sentence_splitters.base_sentence_splitter import BaseSentenceSplitter
+from nlp_toolkit.common.utils import load_spacy
+from nlp_toolkit.preprocessing.sentence_splitters.base_sentence_splitter import BaseSentenceSplitter
 
 SPACY_LANGUAGE_MAPPER = {
     "cs": "xx_sent_ud_sm",

@@ -1,6 +1,6 @@
 from typing import List, Union
 
-from data.word import Word
+from nlp_toolkit.data.word import Word
 
 
 class BaseTokenizer:

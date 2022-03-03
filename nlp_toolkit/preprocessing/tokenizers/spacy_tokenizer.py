@@ -5,11 +5,11 @@ import spacy
 from overrides import overrides
 from spacy.tokens import Doc
 
-from common.logging import get_logger
-from data.word import Word
-from common.utils import load_spacy
-from preprocessing.tokenizers import SPACY_LANGUAGE_MAPPER
-from preprocessing.tokenizers.base_tokenizer import BaseTokenizer
+from nlp_toolkit.common.logging import get_logger
+from nlp_toolkit.data.word import Word
+from nlp_toolkit.common.utils import load_spacy
+from nlp_toolkit.preprocessing.tokenizers import SPACY_LANGUAGE_MAPPER
+from nlp_toolkit.preprocessing.tokenizers.base_tokenizer import BaseTokenizer
 
 logger = get_logger(level=logging.DEBUG)
 

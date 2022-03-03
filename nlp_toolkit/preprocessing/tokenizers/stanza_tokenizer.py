@@ -3,10 +3,10 @@ from typing import List, Union
 
 import stanza.models.common.doc
 
-from common.logging import get_logger
-from common.utils import load_stanza
-from data.word import Word
-from preprocessing.tokenizers.base_tokenizer import BaseTokenizer
+from nlp_toolkit.common.logging import get_logger
+from nlp_toolkit.common.utils import load_stanza
+from nlp_toolkit.data.word import Word
+from nlp_toolkit.preprocessing.tokenizers.base_tokenizer import BaseTokenizer
 
 logger = get_logger(level=logging.DEBUG)
 
