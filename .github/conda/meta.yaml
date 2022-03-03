@@ -1,0 +1,27 @@
+{% set name = "nlp-toolkit" %}
+{% set data = load_setup_py_data() %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ NLP_TOOLKIT_VERSION }}"
+
+about:
+  home: {{ data['url'] }}
+  license: {{ data['license'] }}
+  summary: {{ data['description'] }}
+
+requirements:
+  build:
+    - python
+    - transformers>=4.3,<4.12
+    - spacy>=3.0,<3.2
+  run:
+    - python
+    - transformers>=4.3,<4.12
+    - spacy>=3.0,<3.2
+
+source:
+  path: ../../
+
+build:
+  noarch: python

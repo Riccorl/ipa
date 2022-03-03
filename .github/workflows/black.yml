@@ -1,0 +1,25 @@
+name: Check Code Quality
+
+on: pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: psf/black@stable
+        with:
+          options: "-l 110"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+      - name: Run flake8
+        uses: julianwachholz/flake8-action@v2
+        with:
+          checkName: "Python Lint"
+          path: ./transformers_embedder
+          plugins: "pep8-naming==0.12.1 flake8-comprehensions==3.6.1"
+          config: .flake8
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
