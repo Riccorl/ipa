@@ -46,9 +46,6 @@ class SrlSentence(Sentence):
         id (`Any`): The id of the sentence.
     """
 
-    def __init__(self, words: List[Word] = None, id: Any = None):
-        super(SrlSentence, self).__init__(words, id)
-
     def add_predicate(self, predicate: Predicate, index: int = None) -> Predicate:
         """
         Add a predicate to the sentence.
