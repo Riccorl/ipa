@@ -16,7 +16,6 @@ class WhitespaceTokenizer(BaseTokenizer):
         self,
         texts: Union[str, List[str], List[List[str]]],
         is_split_into_words: bool = False,
-        *args,
         **kwargs,
     ) -> List[List[Word]]:
         """

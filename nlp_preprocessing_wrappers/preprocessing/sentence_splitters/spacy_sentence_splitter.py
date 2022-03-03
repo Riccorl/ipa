@@ -89,7 +89,6 @@ class SpacySentenceSplitter(BaseSentenceSplitter):
         self,
         texts: Union[str, List[str], List[List[str]]],
         max_len: int = 0,
-        *args,
         **kwargs,
     ) -> Union[List[str], List[List[str]]]:
         """
