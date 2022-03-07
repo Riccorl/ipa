@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from typing import Optional, List
+from dataclasses import dataclass
+from typing import Optional
 
 
 @dataclass
@@ -46,97 +46,3 @@ class Word:
 
     def __repr__(self):
         return self.__str__()
-
-
-# Word Sense Disambiguation stuff
-
-
-@dataclass
-class WsdWord(Word):
-    """
-    Word Sense Disambiguation word. It includes all the fields from `Word` plus its synset from various
-    inventories.
-
-    # Parameters
-    babelnet_synset : `str`, optional
-        The label as BabelNet synset.
-    wordnet_synset : `str`, optional
-        The label as WordNet synset.
-    nltk_synset : `str`, optional
-        The label as WordNet synset in the NLTK format.
-
-    """
-
-    babelnet_synset: Optional[str] = None
-    wordnet_synset: Optional[str] = None
-    nltk_synset: Optional[str] = None
-
-    def __str__(self):
-        return self.text
-
-    def __repr__(self):
-        return self.__str__()
-
-
-# Semantic Role Labeling stuff
-
-
-@dataclass
-class Predicate(Word):
-    """
-    Semantic Role Labeling predicate word. It includes all the fields from `Word` plus
-    predicate-related fields from Semantic Role Labeling.
-
-    # Parameters
-    sense : `str`, optional
-        The label of the predicate word.
-    arguments : `list`, optional
-        The list of the arguments of the predicate word.
-    """
-
-    sense: Optional[str] = None
-    arguments: Optional[List[Argument]] = field(default_factory=list)
-
-    def __str__(self):
-        return self.text
-
-    def __repr__(self):
-        return self.__str__()
-
-
-class Argument:
-    """
-    Semantic Role Labeling argument span.
-
-    # Parameters
-    role : `str`
-        The label of the argument span.
-    predicate : `Predicate`
-        The predicate that has this argument span.
-    words : `list`
-        The list of words that take part in the argument span.
-    start_index : `int`
-        The start index of the argument span in the sentence.
-    end_index : `int`
-        The end index of the argument span in the sentence.
-    """
-
-    def __init__(self, role: str, predicate: Predicate, words: List[Word], start_index: int, end_index: int):
-        """
-
-        Args:
-            role:
-            predicate:
-            words:
-            start_index:
-            end_index:
-        """
-        self.role: str = role
-        self.predicate: Predicate = predicate
-        self.words: List[Word] = words
-        self.start_index: int = start_index
-        self.end_index: int = end_index
-
-    @property
-    def span(self):
-        return self.start_index, self.end_index

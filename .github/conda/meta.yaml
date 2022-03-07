@@ -1,4 +1,4 @@
-{% set name = "nlp-toolkit" %}
+{% set name = "nlp-preprocessing-pipelines" %}
 {% set data = load_setup_py_data() %}
 
 package:

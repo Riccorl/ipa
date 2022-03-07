@@ -66,7 +66,7 @@ class StanzaTokenizer(BaseTokenizer):
 
         Example::
 
-            >>> from nlp_preprocessing_wrappers.preprocessing import StanzaTokenizer
+            >>> from nlp_preprocessing_wrappers import StanzaTokenizer
 
             >>> stanza_tokenizer = StanzaTokenizer(language="en", pos_tags=True, lemma=True)
             >>> stanza_tokenizer("Mary sold the car to John.")

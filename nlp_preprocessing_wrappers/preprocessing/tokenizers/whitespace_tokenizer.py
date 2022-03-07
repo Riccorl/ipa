@@ -32,7 +32,7 @@ class WhitespaceTokenizer(BaseTokenizer):
 
         Example::
 
-            >>> from nlp_preprocessing_wrappers.preprocessing import WhitespaceTokenizer
+            >>> from nlp_preprocessing_wrappers import WhitespaceTokenizer
 
             >>> whitespace_tokenizer = WhitespaceTokenizer()
             >>> whitespace_tokenizer("Mary sold the car to John .")

@@ -10,7 +10,7 @@ install_requires = ["spacy>=3.2,<3.3", "stanza>=1.2,<1.4", "overrides>=6.0.0,<7.
 
 setuptools.setup(
     name="nlp_preprocessing_wrappers",  # Replace with your own username
-    version="0.1.2",
+    version="0.1.3",
     author="Riccardo Orlando",
     author_email="orlandoricc@gmail.com",
     description="NLP Preprocessing Pipeline Wrappers",

@@ -82,7 +82,7 @@ class SpacyTokenizer(BaseTokenizer):
 
         Example::
 
-            >>> from nlp_preprocessing_wrappers.preprocessing import SpacyTokenizer
+            >>> from nlp_preprocessing_wrappers import SpacyTokenizer
 
             >>> spacy_tokenizer = SpacyTokenizer(language="en", pos_tags=True, lemma=True)
             >>> spacy_tokenizer("Mary sold the car to John.")
