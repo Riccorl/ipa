@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 extras = {"torch": ["torch>=1.5,<1.13"]}
 extras["all"] = extras["torch"]
 
-install_requires = ["spacy>=3.2,<3.5", "stanza>=1.2,<1.5", "overrides>=6.0.0,<7.0.0"]
+install_requires = ["spacy>=3.2,<3.5", "stanza>=1.2,<1.5", "overrides>=6.0.0,<8.0.0"]
 
 setuptools.setup(
     name="nlp_preprocessing_wrappers",  # Replace with your own username
