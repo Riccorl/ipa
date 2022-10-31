@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-extras = {"torch": ["torch>=1.5,<1.13"]}
+extras = {"torch": ["torch>=1.5,<1.14"]}
 extras["all"] = extras["torch"]
 
 install_requires = ["spacy>=3.2,<3.5", "stanza>=1.2,<1.5", "overrides>=6.0.0,<7.0.0"]
