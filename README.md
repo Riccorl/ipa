@@ -8,8 +8,8 @@
 [![SpaCy](https://img.shields.io/badge/3.4.3-SpaCy-1a6f93?logo=spacy)](https://spacy.io/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000)](https://github.com/psf/black)
 
-[![Upload to PyPi](https://github.com/Riccorl/ipa-core/actions/workflows/python-publish-pypi.yml/badge.svg)](https://github.com/Riccorl/ipa/actions/workflows/python-publish-pypi.yml)
-[![PyPi Version](https://img.shields.io/github/v/release/Riccorl/ipa-core)](https://github.com/Riccorl/ipa/releases)
+[![Upload to PyPi](https://github.com/Riccorl/ipa/actions/workflows/python-publish-pypi.yml/badge.svg)](https://github.com/Riccorl/ipa/actions/workflows/python-publish-pypi.yml)
+[![PyPi Version](https://img.shields.io/github/v/release/Riccorl/ipa)](https://github.com/Riccorl/ipa/releases)
 [![DeepSource](https://deepsource.io/gh/Riccorl/ipa.svg/?label=active+issues&token=QC6Jty-YdgXjKh9mKZyeqa4I)](https://deepsource.io/gh/Riccorl/ipa/?ref=repository-badge)
 
 </div>
