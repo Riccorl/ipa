@@ -21,7 +21,7 @@ jobs:
           pip install build
 
       - name: Extract version
-        run: echo "PREPROCESSING_WRAPPERS_VERSION=`python setup.py --version`" >> $GITHUB_ENV
+        run: echo "IPA_VERSION=`python setup.py --version`" >> $GITHUB_ENV
 
       - name: Build package
         run: python -m build

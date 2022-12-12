@@ -1,9 +1,9 @@
-{% set name = "nlp-preprocessing-pipelines" %}
+{% set name = "ipa-core" %}
 {% set data = load_setup_py_data() %}
 
 package:
   name: "{{ name|lower }}"
-  version: "{{ PREPROCESSING_WRAPPERS_VERSION }}"
+  version: "{{ IPA_VERSION }}"
 
 about:
   home: {{ data['url'] }}
@@ -13,14 +13,14 @@ about:
 requirements:
   build:
     - python
-    - stanza>=1.3,<1.4
-    - spacy>=3.0,<3.3
-    - overrides>=6.0.0,<7.0.0
+    - stanza>=1.3,<1.5
+    - spacy>=3.0,<3.5
+    - overrides>=6.0,<7.4
   run:
     - python
-    - stanza>=1.3,<1.4
-    - spacy>=3.0,<3.3
-    - overrides>=6.0.0,<7.0.0
+    - stanza>=1.3,<1.5
+    - spacy>=3.0,<3.5
+    - overrides>=6.0,<7.4
 source:
   path: ../../
 

@@ -1,40 +1,40 @@
 <div align="center">
 
-# NLP Preprocessing Wrappers
+# 🍺IPA: import, preprocess, accelerate
 
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://github.dev/Riccorl/nlp-preprocessing-wrappers)
+[//]: # ([![Open in Visual Studio Code]&#40;https://open.vscode.dev/badges/open-in-vscode.svg&#41;]&#40;https://github.dev/Riccorl/ipa&#41;)
 [![PyTorch](https://img.shields.io/badge/PyTorch-orange?logo=pytorch)](https://pytorch.org/)
-[![Stanza](https://img.shields.io/badge/1.3-Stanza-5f0a09?logo=stanza)](https://stanfordnlp.github.io/stanza/)
-[![SpaCy](https://img.shields.io/badge/3.2.3-SpaCy-1a6f93?logo=soacy)](https://spacy.io/)
+[![Stanza](https://img.shields.io/badge/1.4-Stanza-5f0a09?logo=stanza)](https://stanfordnlp.github.io/stanza/)
+[![SpaCy](https://img.shields.io/badge/3.4.3-SpaCy-1a6f93?logo=spacy)](https://spacy.io/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000)](https://github.com/psf/black)
 
-[![Upload to PyPi](https://github.com/Riccorl/nlp-preprocessing-wrappers/actions/workflows/python-publish-pypi.yml/badge.svg)](https://github.com/Riccorl/nlp-preprocessing-wrappers/actions/workflows/python-publish-pypi.yml)
-[![PyPi Version](https://img.shields.io/github/v/release/Riccorl/nlp-preprocessing-wrappers)](https://github.com/Riccorl/nlp-preprocessing-wrappers/releases)
-[![DeepSource](https://deepsource.io/gh/Riccorl/nlp-preprocessing-wrappers.svg/?label=active+issues&token=QC6Jty-YdgXjKh9mKZyeqa4I)](https://deepsource.io/gh/Riccorl/nlp-preprocessing-wrappers/?ref=repository-badge)
+[![Upload to PyPi](https://github.com/Riccorl/ipa-core/actions/workflows/python-publish-pypi.yml/badge.svg)](https://github.com/Riccorl/ip-corea/actions/workflows/python-publish-pypi.yml)
+[![PyPi Version](https://img.shields.io/github/v/release/Riccorl/ipa-core)](https://github.com/Riccorl/ipa-core/releases)
+[![DeepSource](https://deepsource.io/gh/Riccorl/ipa.svg/?label=active+issues&token=QC6Jty-YdgXjKh9mKZyeqa4I)](https://deepsource.io/gh/Riccorl/ipa/?ref=repository-badge)
 
 </div>
 
-Preprocessing Wrappers
+🍺IPA: import, preprocess, accelerate
 
 ## How to use
 
 ### Install
 
-Install the library from [PyPI](https://pypi.org/project/nlp-preprocessing-wrappers):
+Install the library from [PyPI](https://pypi.org/project/ipa-core):
 
 ```bash
-pip install nlp-preprocessing-wrappers
+pip install ipa-core
 ```
 
 ### Usage
 
-NLP Preprocessing Wrappers is a Python library that provides a set of preprocessing wrappers for Stanza and
+IPA is a Python library that provides a set of preprocessing wrappers for Stanza and
 spaCy, providing a unified API for both libraries, making them interchangeable.
 
 Let's start with a simple example. Here we are using the `SpacyTokenizer` wrapper to preprocess a text: 
 
 ```python
-from nlp_preprocessing_wrappers import SpacyTokenizer
+from ipa import SpacyTokenizer
 
 spacy_tokenizer = SpacyTokenizer(language="en", return_pos_tags=True, return_lemmas=True)
 tokenized = spacy_tokenizer("Mary sold the car to John.")
@@ -59,7 +59,7 @@ list of available models, see [spaCy documentation](https://spacy.io/usage/model
 In the very same way, you can load any model from Stanza using the `StanzaTokenizer` wrapper:
 
 ```python
-from nlp_preprocessing_wrappers import StanzaTokenizer
+from ipa import StanzaTokenizer
 
 stanza_tokenizer = StanzaTokenizer(language="en", return_pos_tags=True, return_lemmas=True)
 tokenized = stanza_tokenizer("Mary sold the car to John.")
@@ -81,7 +81,7 @@ For more simple scenarios, you can use the `WhiteSpaceTokenizer` wrapper, which 
 by whitespace:
 
 ```python
-from nlp_preprocessing_wrappers import WhitespaceTokenizer
+from ipa import WhitespaceTokenizer
 
 whitespace_tokenizer = WhitespaceTokenizer()
 tokenized = whitespace_tokenizer("Mary sold the car to John .")
