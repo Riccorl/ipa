@@ -30,6 +30,7 @@ from collections import defaultdict
 
 import setuptools
 
+
 def parse_requirements_file(
     path, allowed_extras: set = None, include_all_extra: bool = True
 ):
