@@ -6,7 +6,9 @@ import stanza.models.common.doc
 from nlp_preprocessing_wrappers.common.logging import get_logger
 from nlp_preprocessing_wrappers.common.utils import load_stanza
 from nlp_preprocessing_wrappers.data.word import Word
-from nlp_preprocessing_wrappers.preprocessing.tokenizers.base_tokenizer import BaseTokenizer
+from nlp_preprocessing_wrappers.preprocessing.tokenizers.base_tokenizer import (
+    BaseTokenizer,
+)
 
 logger = get_logger(level=logging.DEBUG)
 
@@ -42,7 +44,12 @@ class StanzaTokenizer(BaseTokenizer):
     ):
         super(StanzaTokenizer, self).__init__()
         self.stanza = load_stanza(
-            language, return_pos_tags, return_lemmas, return_deps, split_on_spaces, use_gpu
+            language,
+            return_pos_tags,
+            return_lemmas,
+            return_deps,
+            split_on_spaces,
+            use_gpu,
         )
         self.split_on_spaces = split_on_spaces
 
@@ -97,7 +104,9 @@ class StanzaTokenizer(BaseTokenizer):
     def tokenize(self, text: Union[str, List[str]]) -> List[Word]:
         return self._clean_tokens(self.stanza(text).sentences[0].tokens)
 
-    def tokenize_batch(self, texts: Union[List[str], List[List[str]]]) -> List[List[Word]]:
+    def tokenize_batch(
+        self, texts: Union[List[str], List[List[str]]]
+    ) -> List[List[Word]]:
         # stanza has this weird method to process batches
         # if it is already tokenized, join temporarily
         # to perform preprocessing in batch

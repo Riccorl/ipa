@@ -4,7 +4,9 @@ from overrides import overrides
 
 from nlp_preprocessing_wrappers.data.word import Word
 
-from nlp_preprocessing_wrappers.preprocessing.tokenizers.base_tokenizer import BaseTokenizer
+from nlp_preprocessing_wrappers.preprocessing.tokenizers.base_tokenizer import (
+    BaseTokenizer,
+)
 
 
 class WhitespaceTokenizer(BaseTokenizer):
@@ -55,4 +57,6 @@ class WhitespaceTokenizer(BaseTokenizer):
         elif isinstance(text, list):
             return [Word(t, i) for i, t in enumerate(text)]
         else:
-            raise ValueError(f"text must be either `str` or `list`, found: `{type(text)}`")
+            raise ValueError(
+                f"text must be either `str` or `list`, found: `{type(text)}`"
+            )

@@ -146,7 +146,11 @@ class SpacySentenceSplitter(BaseSentenceSplitter):
         """
         sentences = [sent.text.strip() for sent in self.spacy(text).sents]
         if max_len > 0:
-            sentences = [chunk for sentence in sentences for chunk in self.chunked(sentence, max_len)]
+            sentences = [
+                chunk
+                for sentence in sentences
+                for chunk in self.chunked(sentence, max_len)
+            ]
         return sentences
 
     @overrides
@@ -154,4 +158,7 @@ class SpacySentenceSplitter(BaseSentenceSplitter):
         """
         This method lets you take advantage of spacy's batch processing.
         """
-        return [[sentence.text.strip() for sentence in doc.sents] for doc in self.spacy.pipe(texts)]
+        return [
+            [sentence.text.strip() for sentence in doc.sents]
+            for doc in self.spacy.pipe(texts)
+        ]

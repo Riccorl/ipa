@@ -16,7 +16,7 @@ jobs:
         uses: julianwachholz/flake8-action@v2
         with:
           checkName: "Python Lint"
-          path: ./nlp_preprocessing_wrappers
+          path: ./ipa
           plugins: "pep8-naming==0.12.1 flake8-comprehensions==3.6.1"
           config: .flake8
         env:

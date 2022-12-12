@@ -58,7 +58,9 @@ class BaseTokenizer:
         return [self.tokenize(text) for text in texts]
 
     @staticmethod
-    def check_is_batched(texts: Union[str, List[str], List[List[str]]], is_split_into_words: bool):
+    def check_is_batched(
+        texts: Union[str, List[str], List[List[str]]], is_split_into_words: bool
+    ):
         """
         Check if input is batched or a single sample.
 

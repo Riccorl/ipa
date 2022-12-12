@@ -76,7 +76,9 @@ def load_spacy(
         try:
             spacy_tagger = spacy.load(language, exclude=exclude)
         except OSError:
-            logger.warning(f"Spacy model '{language}' not found. Downloading and installing.")
+            logger.warning(
+                f"Spacy model '{language}' not found. Downloading and installing."
+            )
             spacy_download(language)
             spacy_tagger = spacy.load(language, exclude=exclude)
 
@@ -138,7 +140,9 @@ def load_stanza(
                 use_gpu=use_gpu,
             )
         except OSError:
-            logger.info(f"Stanza model '{language}' not found. Downloading and installing.")
+            logger.info(
+                f"Stanza model '{language}' not found. Downloading and installing."
+            )
             stanza.download(language)
             stanza_tagger = stanza.Pipeline(
                 language,

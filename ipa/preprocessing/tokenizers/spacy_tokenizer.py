@@ -9,7 +9,9 @@ from nlp_preprocessing_wrappers.common.logging import get_logger
 from nlp_preprocessing_wrappers.data.word import Word
 from nlp_preprocessing_wrappers.common.utils import load_spacy
 from nlp_preprocessing_wrappers.preprocessing.tokenizers import SPACY_LANGUAGE_MAPPER
-from nlp_preprocessing_wrappers.preprocessing.tokenizers.base_tokenizer import BaseTokenizer
+from nlp_preprocessing_wrappers.preprocessing.tokenizers.base_tokenizer import (
+    BaseTokenizer,
+)
 
 logger = get_logger(level=logging.DEBUG)
 
@@ -106,12 +108,17 @@ class SpacyTokenizer(BaseTokenizer):
         return self._clean_tokens(self.spacy(text))
 
     @overrides
-    def tokenize_batch(self, texts: Union[List[str], List[List[str]]]) -> List[List[Word]]:
+    def tokenize_batch(
+        self, texts: Union[List[str], List[List[str]]]
+    ) -> List[List[Word]]:
         if self.split_on_spaces:
             if isinstance(texts[0], str):
                 texts = [text.split(" ") for text in texts]
             spaces = [[True] * len(text) for text in texts]
-            texts = [Doc(self.spacy.vocab, words=text, spaces=space) for text, space in zip(texts, spaces)]
+            texts = [
+                Doc(self.spacy.vocab, words=text, spaces=space)
+                for text, space in zip(texts, spaces)
+            ]
         return [self._clean_tokens(tokens) for tokens in self.spacy.pipe(texts)]
 
     @staticmethod
@@ -154,6 +161,8 @@ class WhitespaceSpacyTokenizer:
         elif isinstance(text, list):
             words = text
         else:
-            raise ValueError(f"text must be either `str` or `list`, found: `{type(text)}`")
+            raise ValueError(
+                f"text must be either `str` or `list`, found: `{type(text)}`"
+            )
         spaces = [True] * len(words)
         return Doc(self.vocab, words=words, spaces=spaces)

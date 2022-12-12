@@ -62,7 +62,9 @@ def set_log_level(level: int) -> None:
 
 
 def get_logger(
-    name: Optional[str] = None, level: Optional[int] = None, formatter: Optional[str] = None
+    name: Optional[str] = None,
+    level: Optional[int] = None,
+    formatter: Optional[str] = None,
 ) -> logging.Logger:
     """
     Return a logger with the specified name.
@@ -77,7 +79,9 @@ def get_logger(
         set_log_level(level)
 
     if formatter is None:
-        formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(name)s - %(message)s")
+        formatter = logging.Formatter(
+            "%(asctime)s - %(levelname)s - %(name)s - %(message)s"
+        )
     _default_handler.setFormatter(formatter)
 
     return logging.getLogger(name)
