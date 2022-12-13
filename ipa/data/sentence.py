@@ -1,6 +1,6 @@
 from typing import List, Any
 
-from nlp_preprocessing_wrappers.data.word import Word
+from ipa.data.word import Word
 
 
 class Sentence(List):

@@ -5,11 +5,11 @@ import spacy
 from overrides import overrides
 from spacy.tokens import Doc
 
-from nlp_preprocessing_wrappers.common.logging import get_logger
-from nlp_preprocessing_wrappers.data.word import Word
-from nlp_preprocessing_wrappers.common.utils import load_spacy
-from nlp_preprocessing_wrappers.preprocessing.tokenizers import SPACY_LANGUAGE_MAPPER
-from nlp_preprocessing_wrappers.preprocessing.tokenizers.base_tokenizer import (
+from ipa.common.logging import get_logger
+from ipa.common.utils import load_spacy
+from ipa.data.word import Word
+from ipa.preprocessing.tokenizers import SPACY_LANGUAGE_MAPPER
+from ipa.preprocessing.tokenizers.base_tokenizer import (
     BaseTokenizer,
 )
 
@@ -84,7 +84,7 @@ class SpacyTokenizer(BaseTokenizer):
 
         Example::
 
-            >>> from nlp_preprocessing_wrappers import SpacyTokenizer
+            >>> from ipa import SpacyTokenizer
 
             >>> spacy_tokenizer = SpacyTokenizer(language="en", pos_tags=True, lemma=True)
             >>> spacy_tokenizer("Mary sold the car to John.")

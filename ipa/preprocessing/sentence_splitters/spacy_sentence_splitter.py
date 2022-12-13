@@ -3,8 +3,8 @@ from typing import Any, Iterable, List, Union
 import spacy
 from overrides import overrides
 
-from nlp_preprocessing_wrappers.common.utils import load_spacy
-from nlp_preprocessing_wrappers.preprocessing.sentence_splitters.base_sentence_splitter import (
+from ipa.common.utils import load_spacy
+from ipa.preprocessing.sentence_splitters.base_sentence_splitter import (
     BaseSentenceSplitter,
 )
 

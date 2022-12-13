@@ -6,7 +6,7 @@ import spacy
 import stanza
 from spacy.cli.download import download as spacy_download
 
-from nlp_preprocessing_wrappers.common.logging import get_logger
+from ipa.common.logging import get_logger
 
 logger = get_logger(level=logging.DEBUG)
 

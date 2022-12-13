@@ -2,9 +2,8 @@ from typing import List, Union
 
 from overrides import overrides
 
-from nlp_preprocessing_wrappers.data.word import Word
-
-from nlp_preprocessing_wrappers.preprocessing.tokenizers.base_tokenizer import (
+from ipa.data.word import Word
+from ipa.preprocessing.tokenizers.base_tokenizer import (
     BaseTokenizer,
 )
 

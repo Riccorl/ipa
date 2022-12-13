@@ -3,10 +3,10 @@ from typing import List, Union
 
 import stanza.models.common.doc
 
-from nlp_preprocessing_wrappers.common.logging import get_logger
-from nlp_preprocessing_wrappers.common.utils import load_stanza
-from nlp_preprocessing_wrappers.data.word import Word
-from nlp_preprocessing_wrappers.preprocessing.tokenizers.base_tokenizer import (
+from ipa.common.logging import get_logger
+from ipa.common.utils import load_stanza
+from ipa.data.word import Word
+from ipa.preprocessing.tokenizers.base_tokenizer import (
     BaseTokenizer,
 )
 
@@ -73,7 +73,7 @@ class StanzaTokenizer(BaseTokenizer):
 
         Example::
 
-            >>> from nlp_preprocessing_wrappers import StanzaTokenizer
+            >>> from ipa import StanzaTokenizer
 
             >>> stanza_tokenizer = StanzaTokenizer(language="en", pos_tags=True, lemma=True)
             >>> stanza_tokenizer("Mary sold the car to John.")
