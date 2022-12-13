@@ -90,10 +90,12 @@ class StanzaTokenizer(BaseTokenizer):
             if is_split_into_words and not is_batched:
                 if not self.split_on_spaces:
                     logger.warning(
-                        f"`is_split_into_words` is set to `{is_split_into_words}` while `split_on_spaces` is"
-                        f" set to `{self.split_on_spaces}`. To avoid error from Stanza, the text will be"
-                        f' joined in a single string (`" ".join(input)`). To avoid this use '
-                        f" `split_on_spaces=True.`"
+                        "`is_split_into_words` is set to `%s` while `split_on_spaces` is"
+                        " set to `%s`. To avoid error from Stanza, the text will be"
+                        ' joined in a single string (`" ".join(input)`). To avoid this use '
+                        " `split_on_spaces=True.`",
+                        is_split_into_words,
+                        self.split_on_spaces,
                     )
                     texts = " ".join(texts)
                 texts = [texts]
