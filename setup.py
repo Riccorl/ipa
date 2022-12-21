@@ -93,7 +93,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ipa-core",  # Replace with your own project name
-    version="0.1.0",
+    version="0.1.1",
     author="Riccardo Orlando",
     author_email="orlandoricc@gmail.com",
     description="NLP Preprocessing Pipeline Wrappers",
