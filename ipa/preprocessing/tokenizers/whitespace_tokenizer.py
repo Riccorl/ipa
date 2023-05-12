@@ -1,3 +1,4 @@
+import re
 from typing import List, Union
 
 from overrides import overrides
@@ -12,6 +13,10 @@ class WhitespaceTokenizer(BaseTokenizer):
     """
     A :obj:`Tokenizer` that splits the text on spaces.
     """
+
+    def __init__(self):
+        super(WhitespaceTokenizer, self).__init__()
+        self.finditer_regex = re.compile(r"\S+")
 
     def __call__(
         self,
@@ -51,11 +56,18 @@ class WhitespaceTokenizer(BaseTokenizer):
 
     @overrides
     def tokenize(self, text: Union[str, List[str]]) -> List[Word]:
-        if isinstance(text, str):
-            return [Word(t, i) for i, t in enumerate(text.split())]
-        elif isinstance(text, list):
-            return [Word(t, i) for i, t in enumerate(text)]
-        else:
+
+        if not isinstance(text, (str, list)):
             raise ValueError(
                 f"text must be either `str` or `list`, found: `{type(text)}`"
             )
+
+        if isinstance(text, list):
+            text = " ".join(text)
+        return [
+            Word(t[0], i, start_char=t[1], end_char=t[2])
+            for i, t in enumerate(
+                (m.group(0), m.start(), m.end())
+                for m in self.finditer_regex.finditer(text)
+            )
+        ]
